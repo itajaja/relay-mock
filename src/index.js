@@ -17,7 +17,7 @@ export default class MockNetworkLayer {
     return Promise.all(queryRequests.map(this.sendQuery));
   }
 
-  sendQuery = async queryRequest => {
+  sendQuery = queryRequest => {
     const query = queryRequest.getQueryString();
     const variables = queryRequest.getVariables();
 
