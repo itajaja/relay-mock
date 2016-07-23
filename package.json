@@ -1,0 +1,24 @@
+{
+  "name": "relay-mock",
+  "version": "0.0.0",
+  "description": "A NetworkLayer for mocking",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itajaja/relay-mock.git"
+  },
+  "keywords": [
+    "relay",
+    "graphql",
+    "mock"
+  ],
+  "author": "Giacomo Tagliabue",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itajaja/relay-mock/issues"
+  },
+  "homepage": "https://github.com/itajaja/relay-mock#readme"
+}
