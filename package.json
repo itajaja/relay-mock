@@ -2,7 +2,7 @@
   "name": "relay-mock",
   "version": "0.1.0",
   "description": "A NetworkLayer for mocking",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "rimraf lib && babel src --out-dir lib",
     "prepublish": "npm run build",
