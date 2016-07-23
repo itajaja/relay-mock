@@ -4,7 +4,9 @@
   "description": "A NetworkLayer for mocking",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf lib && babel src --out-dir lib",
+    "prepublish": "npm run build",
+    "test": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,14 @@
   "bugs": {
     "url": "https://github.com/itajaja/relay-mock/issues"
   },
-  "homepage": "https://github.com/itajaja/relay-mock#readme"
+  "homepage": "https://github.com/itajaja/relay-mock#readme",
+  "devDependencies": {
+    "babel-cli": "^6.11.4",
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "rimraf": "^2.5.4"
+  }
 }
