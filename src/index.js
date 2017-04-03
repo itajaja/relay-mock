@@ -1,8 +1,11 @@
-import { mockServer } from 'graphql-tools';
+import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
+import { graphql } from 'graphql';
 
 export default class MockNetworkLayer {
   constructor(...args) {
-    this.server = mockServer(...args);
+    this.schema = makeExecutableSchema({ typeDefs: args[0] });
+
+    addMockFunctionsToSchema({ schema: this.schema });
   }
 
   supports() {
@@ -21,7 +24,10 @@ export default class MockNetworkLayer {
     const query = queryRequest.getQueryString();
     const variables = queryRequest.getVariables();
 
-    return this.server.query(query, variables)
-      .then(({ data }) => queryRequest.resolve({ response: data }));
+    return graphql(this.schema, query, {}, {}, variables).then(response => {
+      request.resolve({
+        response: response.data,
+      });
+    });
   }
 }
