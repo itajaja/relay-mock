@@ -36,7 +36,7 @@
     "rimraf": "^2.5.4"
   },
   "dependencies": {
-    "graphql": "^0.2.2",
+    "graphql": "^0.6.2",
     "graphql-tools": "^0.11.0"
   }
 }
